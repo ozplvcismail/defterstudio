@@ -1,0 +1,75 @@
+/* Garanti Defteri gizlilik ve destek sayfaları. Dış kaynak, yazı tipi, betik yok. */
+:root {
+  --bg: #fbfaf7;
+  --surface: #f1efe9;
+  --text: #1d1c1a;
+  --muted: #5b5852;
+  --line: #dcd8cf;
+  --link: #1f5f8b;
+  --code-bg: #e9e6de;
+  color-scheme: light dark;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #161615;
+    --surface: #201f1d;
+    --text: #ebe8e2;
+    --muted: #aaa59c;
+    --line: #3a3834;
+    --link: #8cc4ec;
+    --code-bg: #2c2a27;
+  }
+}
+
+*,
+*::before,
+*::after { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-size: 1.0625rem;
+  line-height: 1.65;
+  overflow-wrap: anywhere;
+}
+
+.wrap { max-width: 44rem; margin: 0 auto; padding: 0 1rem; }
+
+a { color: var(--link); text-underline-offset: 0.15em; }
+a:focus-visible { outline: 2px solid var(--link); outline-offset: 2px; border-radius: 2px; }
+
+.skip { position: absolute; left: -9999px; }
+.skip:focus { left: 1rem; top: 1rem; background: var(--bg); padding: 0.5rem 0.75rem; z-index: 1; }
+
+header.site { background: var(--surface); border-bottom: 1px solid var(--line); padding: 1.25rem 0 1rem; }
+header.site p { margin: 0; }
+.app { font-size: 1.375rem; font-weight: 700; line-height: 1.3; }
+.by { color: var(--muted); font-size: 0.9375rem; margin-top: 0.25rem; }
+.lang { float: right; margin-left: 1rem; font-size: 0.9375rem; }
+.lang a { display: inline-block; padding: 0.25rem 0.625rem; border: 1px solid var(--line); border-radius: 999px; text-decoration: none; }
+.pages { margin-top: 0.5rem; font-size: 0.9375rem; }
+.pages a[aria-current="page"] { color: var(--text); font-weight: 600; text-decoration: none; }
+
+main { padding-top: 1.5rem; padding-bottom: 2rem; }
+h1 { font-size: 1.625rem; line-height: 1.25; margin: 0 0 1rem; }
+h2 { font-size: 1.1875rem; line-height: 1.35; margin: 2rem 0 0.5rem; padding-top: 1rem; border-top: 1px solid var(--line); }
+p, ul { margin: 0 0 1rem; }
+ul { padding-left: 1.25rem; }
+li + li { margin-top: 0.5rem; }
+
+code { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: 0.9em; background: var(--code-bg); padding: 0.1em 0.3em; border-radius: 4px; }
+
+.meta { margin: 0 0 1.5rem; padding: 0.75rem 1rem; background: var(--surface); border: 1px solid var(--line); border-radius: 8px; font-size: 0.9375rem; }
+.meta div { display: flex; flex-wrap: wrap; gap: 0 0.5rem; }
+.meta div + div { margin-top: 0.25rem; }
+.meta dt { font-weight: 600; }
+.meta dt::after { content: ":"; }
+.meta dd { margin: 0; }
+
+.site-foot { border-top: 1px solid var(--line); padding-top: 1rem; padding-bottom: 2rem; color: var(--muted); font-size: 0.9375rem; }
+.site-foot p { margin: 0; }
